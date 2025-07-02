@@ -1,10 +1,15 @@
+// frontend/src/App.js
+
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import CSPTester from './pages/CSPTester';  // ← new
+
 import { getMe } from './services/api';
 
 export default function App() {
@@ -24,6 +29,7 @@ export default function App() {
   return (
     <>
       <Navbar user={user} setUser={setUser} />
+
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -53,6 +59,9 @@ export default function App() {
               : <Navigate to="/login" replace />
           }
         />
+
+        {/* new CSP tester route */}
+        <Route path="/csp-test" element={<CSPTester />} />
 
         {/* catch-all */}
         <Route path="*" element={<Navigate to="/" replace />} />

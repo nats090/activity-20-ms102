@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>CSP Violation Test</title>
+</head>
+<body>
+  <h1>CSP Violation Test Page</h1>
+
+  <!-- This inline script WILL be blocked by our CSP -->
+  <script>
+    console.log('This inline script is blocked by CSP policy.');
+  </script>
+
+  <!-- This external script from self WILL be allowed if you add trust -->
+   <script src="https://evil.com/evil.js"></script>
+  <!--
+  <script src="/path/to/allowed.js"></script>
+  -->
+</body>
+</html>

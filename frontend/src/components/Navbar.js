@@ -1,3 +1,5 @@
+// frontend/src/components/Navbar.js
+
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { logout } from '../services/api';
@@ -16,7 +18,13 @@ export default function Navbar({ user, setUser }) {
 
   return (
     <nav style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
-      <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
+      {/* Always-visible links */}
+      <Link to="/" style={{ marginRight: '1rem' }}>
+        Home
+      </Link>
+      <Link to="/csp-test" style={{ marginRight: '1rem' }}>
+        CSP Test
+      </Link>
 
       {user ? (
         <>
@@ -26,18 +34,14 @@ export default function Navbar({ user, setUser }) {
           <Link to="/dashboard" style={{ marginRight: '1rem' }}>
             Dashboard
           </Link>
-          <button onClick={handleLogout}>
-            Logout
-          </button>
+          <button onClick={handleLogout}>Logout</button>
         </>
       ) : (
         <>
           <Link to="/login" style={{ marginRight: '1rem' }}>
             Login
           </Link>
-          <Link to="/register">
-            Register
-          </Link>
+          <Link to="/register">Register</Link>
         </>
       )}
     </nav>
