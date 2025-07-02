@@ -4,8 +4,14 @@ A boilerplate React + Express app with OWASP Top-10 mitigations, secure headers,
 
 ## Setup
 
-1. Clone this repo  
-2. Install backend deps  
-   ```bash
+1. Clone this repo
+2. Terminal One:
    cd backend
    npm install
+   npm start
+3. Terminal Two:
+   cd frontend
+   npm install
+   npm start
+
+   BOOM!
